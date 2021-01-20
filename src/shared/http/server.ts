@@ -2,7 +2,8 @@ import 'reflect-metadata';
 import express from 'express';
 import cors from 'cors';
 import routes from './routes';
-import errorTreatment from '../middlewares/errorTreatment';
+import errorTreatment from '@shared/middlewares/errorTreatment';
+import '../typeorm';
 
 const app = express();
 
