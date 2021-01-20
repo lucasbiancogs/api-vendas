@@ -1,7 +1,8 @@
-import express, { NextFunction, Request, Response } from 'express';
+import 'reflect-metadata';
+import express from 'express';
 import cors from 'cors';
 import routes from './routes';
-import errorTreatment from '@shared/middlewares/errorTreatment';
+import errorTreatment from '../middlewares/errorTreatment';
 
 const app = express();
 

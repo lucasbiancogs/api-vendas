@@ -1,11 +1,12 @@
-import AppError from '@shared/errors/appError';
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
+import AppError from '../errors/appError';
 
-function errorTreatment(
+const errorTreatment = (
     error: Error,
     request: Request,
     response: Response,
-): Response {
+    next: NextFunction,
+) => {
     if (error instanceof AppError) {
         return response.status(error.statusCode).json({
             status: 'error',
@@ -17,6 +18,6 @@ function errorTreatment(
         status: 'error',
         message: 'Internal server error',
     });
-}
+};
 
 export default errorTreatment;
