@@ -1,9 +1,9 @@
 {
     "type": "postgres",
-    "host": "localhost",
+    "host": "c_database",
     "port": 5432,
     "username": "postgres",
-    "password": "docker",
+    "password": "postgres",
     "database": "apivendas",
     "migrations": ["./src/shared/typeorm/migrations/*.ts"],
     "cli": {

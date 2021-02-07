@@ -1,3 +1,7 @@
 # api-vendas
 
-Run docker-compose up and then yarn dev to run the project
+### Start
+Run docker-compose up to start the project.
+
+### Migrations
+npm run typeorm migration:create -- -n MigrationName

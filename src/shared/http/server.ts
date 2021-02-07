@@ -3,7 +3,23 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes';
 import errorTreatment from '../middlewares/errorTreatment';
-import '../typeorm';
+import { createConnection } from 'typeorm';
+
+const connect = () => {
+  createConnection()
+    .then(async connection => {
+    console.log('Database connected! ✅');
+
+    connection.runMigrations();
+
+    app.listen(3333, () => {
+      console.log('Server started at port 33333! 🏆');
+    });
+  })
+    .catch(err => {
+      console.log('Database connection error! 🛑')
+    });
+};
 
 const app = express();
 
@@ -14,6 +30,4 @@ app.use(routes);
 
 app.use(errorTreatment);
 
-app.listen(3333, () => {
-    console.log('Server started at port 33333! 🏆');
-});
+connect();
