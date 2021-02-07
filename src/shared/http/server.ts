@@ -1,9 +1,11 @@
 import 'reflect-metadata';
 import express from 'express';
+import 'express-async-errors';
 import cors from 'cors';
 import routes from './routes';
 import errorTreatment from '../middlewares/errorTreatment';
 import { createConnection } from 'typeorm';
+import { errors } from 'celebrate';
 
 const connect = () => {
   createConnection()
@@ -29,5 +31,6 @@ app.use(express.json());
 app.use(routes);
 
 app.use(errorTreatment);
+app.use(errors());
 
 connect();
