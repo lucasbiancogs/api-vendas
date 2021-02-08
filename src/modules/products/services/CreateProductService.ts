@@ -1,7 +1,7 @@
 import { getCustomRepository } from 'typeorm';
 import AppError from '../../../shared/errors/appError';
 import Product from '../typeorm/entities/Product';
-import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
+import ProductsRepository from '../typeorm/repositories/ProductsRepository';
 
 interface IRequest {
   name: string;
@@ -16,7 +16,7 @@ class CreateProductService {
     const productExists = await productsRepository.findByName(name);
 
     if (productExists) {
-      throw new AppError('A product with this name already exists');
+      throw new AppError('A product with this name already exists.');
     }
 
     // Esse método somente cria o objeto, por isso é síncrono

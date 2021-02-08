@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
 import AppError from '../../../shared/errors/appError';
-import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
+import ProductsRepository from '../typeorm/repositories/ProductsRepository';
 
 interface IRequest {
   id: string;
@@ -12,8 +12,8 @@ class DeleteProductService {
 
     const product = await productsRepository.findOne(id);
 
-    if(!product) {
-      throw new AppError('Product not found')
+    if (!product) {
+      throw new AppError('Product not found.');
     }
 
     await productsRepository.remove(product);

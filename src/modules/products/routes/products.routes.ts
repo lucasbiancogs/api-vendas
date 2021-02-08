@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import ProductsController from '../controllers/ProductsController';
-import createProductValidator from '../validators/CreateProductValidator';
+import createProductValidator from '../validators/createProductValidator';
 import deleteProductValidator from '../validators/deleteProductValidator';
-import showProductValidator from '../validators/ShowProductValidator';
+import showProductValidator from '../validators/showProductValidator';
 import updateProductValidator from '../validators/updateProductValidator';
 
 const productsRouter = Router();
