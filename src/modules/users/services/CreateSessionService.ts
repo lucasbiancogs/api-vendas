@@ -39,14 +39,12 @@ class CreateSessionService {
 
     const duration = parseInt(expiresIn.split('h')[0]) * 3600;
 
-    const jwtBody = { name, id, duration };
-
     const options = {
       subject: user.id,
       expiresIn,
     };
 
-    const token = sign(jwtBody, secret, options);
+    const token = sign({}, secret, options);
 
     return {
       name,

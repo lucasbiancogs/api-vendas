@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import isAuthenticated from '../../users/middlewares/isAuthenticated';
+import isAuthenticated from '../../../shared/middlewares/isAuthenticated';
 import ProductsController from '../controllers/ProductsController';
 import createProductValidator from '../validators/createProductValidator';
 import deleteProductValidator from '../validators/deleteProductValidator';
