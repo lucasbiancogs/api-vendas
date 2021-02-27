@@ -6,6 +6,7 @@ import routes from './routes';
 import errorTreatment from '../middlewares/errorTreatment';
 import { createConnection } from 'typeorm';
 import { errors } from 'celebrate';
+import uploadConfig from '../../config/upload';
 
 const connect = () => {
   createConnection()
@@ -27,6 +28,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use('/files', express.static(uploadConfig.directory));
 
 app.use(routes);
 
