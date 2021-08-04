@@ -8,4 +8,4 @@ const createUserValidator = celebrate({
   },
 });
 
-export default createUserValidator;
+export { createUserValidator };

@@ -7,4 +7,4 @@ const createSessionValidator = celebrate({
   },
 });
 
-export default createSessionValidator;
+export { createSessionValidator };

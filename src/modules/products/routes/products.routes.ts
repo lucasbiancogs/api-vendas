@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import isAuthenticated from '../../../shared/middlewares/isAuthenticated';
-import ProductsController from '../controllers/ProductsController';
-import createProductValidator from '../validators/createProductValidator';
-import deleteProductValidator from '../validators/deleteProductValidator';
-import showProductValidator from '../validators/showProductValidator';
-import updateProductValidator from '../validators/updateProductValidator';
+import {isAuthenticated} from '../../../shared/middlewares/isAuthenticated';
+import { ProductsController } from '../controllers/ProductsController';
+import {createProductValidator} from '../validators/createProductValidator';
+import {deleteProductValidator} from '../validators/deleteProductValidator';
+import {showProductValidator} from '../validators/showProductValidator';
+import {updateProductValidator} from '../validators/updateProductValidator';
 
 const productsRouter = Router();
 const productsController = new ProductsController();
@@ -19,4 +19,4 @@ productsRouter.put('/:id', updateProductValidator, isAuthenticated, productsCont
 
 productsRouter.delete('/:id', deleteProductValidator, isAuthenticated, productsController.delete);
 
-export default productsRouter;
+export { productsRouter };

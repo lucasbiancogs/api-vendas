@@ -1,8 +1,8 @@
 import { hash } from 'bcryptjs';
 import { getCustomRepository } from 'typeorm';
-import AppError from '../../../shared/errors/appError';
-import User from '../typeorm/entities/user';
-import UsersRepository from '../typeorm/repositories/UsersRepository';
+import { AppError } from '../../../shared/errors/appError';
+import { User } from '../typeorm/entities/user';
+import { UsersRepository } from '../typeorm/repositories/UsersRepository';
 
 interface IRequest {
   name: string;
@@ -16,7 +16,7 @@ class CreateUserService {
 
     const emailExists = await usersRepository.findByEmail(email);
 
-    if(emailExists) {
+    if (emailExists) {
       throw new AppError('Email adress already used.')
     }
 
@@ -35,4 +35,4 @@ class CreateUserService {
   }
 }
 
-export default CreateUserService;
+export { CreateUserService };

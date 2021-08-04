@@ -2,8 +2,8 @@ import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import { getCustomRepository } from 'typeorm';
 import authConfig from '../../../config/auth';
-import AppError from '../../../shared/errors/appError';
-import UsersRepository from '../typeorm/repositories/UsersRepository';
+import { AppError } from '../../../shared/errors/appError';
+import { UsersRepository } from '../typeorm/repositories/UsersRepository';
 
 interface IRequest {
   email: string;
@@ -54,4 +54,4 @@ class CreateSessionService {
   }
 }
 
-export default CreateSessionService;
+export { CreateSessionService };

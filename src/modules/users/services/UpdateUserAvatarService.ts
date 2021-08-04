@@ -1,8 +1,8 @@
 import { getCustomRepository } from 'typeorm';
 import path from 'path';
-import AppError from '../../../shared/errors/appError';
-import User from '../typeorm/entities/user';
-import UsersRepository from '../typeorm/repositories/UsersRepository';
+import { AppError } from '../../../shared/errors/appError';
+import { User } from '../typeorm/entities/user';
+import { UsersRepository } from '../typeorm/repositories/UsersRepository';
 import uploadConfig from '../../../config/upload';
 import fs from 'fs';
 
@@ -42,4 +42,4 @@ class UpdateUserAvatarService {
   }
 }
 
-export default UpdateUserAvatarService;
+export { UpdateUserAvatarService };

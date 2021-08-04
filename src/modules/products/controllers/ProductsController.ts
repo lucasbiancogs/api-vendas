@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import CreateProductService from "../services/CreateProductService";
-import DeleteProductService from "../services/DeleteProductService";
-import ListProductService from "../services/ListProductService";
-import ShowProductService from "../services/ShowProductService";
-import UpdateProductService from "../services/UpdateProductService";
+import { CreateProductService } from "../services/CreateProductService";
+import { DeleteProductService } from "../services/DeleteProductService";
+import { ListProductService } from "../services/ListProductService";
+import { ShowProductService } from "../services/ShowProductService";
+import { UpdateProductService } from "../services/UpdateProductService";
 
-export default class ProductsController {
+export class ProductsController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listProducts = new ListProductService();
 
@@ -44,7 +44,7 @@ export default class ProductsController {
 
     const updateProduct = new UpdateProductService();
 
-    const product  = await updateProduct.execute({
+    const product = await updateProduct.execute({
       id,
       name,
       price,

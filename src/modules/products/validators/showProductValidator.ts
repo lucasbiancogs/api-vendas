@@ -6,4 +6,4 @@ const showProductValidator = celebrate({
   },
 });
 
-export default showProductValidator;
+export { showProductValidator };

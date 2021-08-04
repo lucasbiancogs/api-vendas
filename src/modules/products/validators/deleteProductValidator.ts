@@ -6,4 +6,4 @@ const deleteProductValidator = celebrate({
   },
 });
 
-export default deleteProductValidator;
+export { deleteProductValidator };

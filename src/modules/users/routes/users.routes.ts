@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import multer from 'multer';
 import uploadConfig from '../../../config/upload';
-import UsersController from '../controllers/UserController';
-import isAuthenticated from '../../../shared/middlewares/isAuthenticated';
-import createUserValidator from '../validators/createUserValidator';
-import UsersAvatarController from '../controllers/UserAvatarController';
+import { UsersController } from '../controllers/UserController';
+import { isAuthenticated } from '../../../shared/middlewares/isAuthenticated';
+import { createUserValidator } from '../validators/createUserValidator';
+import { UsersAvatarController } from '../controllers/UserAvatarController';
 
 const usersRouter = Router();
 
@@ -24,4 +24,4 @@ usersRouter.patch(
   usersAvatarController.update,
 );
 
-export default usersRouter;
+export { usersRouter };

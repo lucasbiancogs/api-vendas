@@ -11,4 +11,4 @@ const updateProductValidator = celebrate({
   },
 });
 
-export default updateProductValidator;
+export { updateProductValidator };

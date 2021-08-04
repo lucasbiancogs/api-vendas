@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import AppError from '../../../shared/errors/appError';
-import ProductsRepository from '../typeorm/repositories/ProductsRepository';
+import { AppError } from '../../../shared/errors/appError';
+import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
 
 interface IRequest {
   id: string;
@@ -20,4 +20,4 @@ class DeleteProductService {
   }
 }
 
-export default DeleteProductService;
+export { DeleteProductService };
